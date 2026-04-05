@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo à Evolução | Evoluglow</title>
+    <title>Acesso Liberado | Evoluglow</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -36,83 +36,108 @@
 
         .container { width: 90%; max-width: 550px; margin: 0 auto; position: relative; z-index: 1; }
 
-        /* 🧲 PRIMEIRA DOBRA */
-        .header-conf { text-align: center; padding: 100px 0 40px; }
-        .header-conf h1 { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; line-height: 1.3; margin-bottom: 25px; letter-spacing: -1px; }
-        .header-conf h1 span { color: var(--primary); display: block; font-size: 1.8rem; font-weight: 900; margin-top: 10px; }
-        .header-conf p { font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
-        .header-conf .sub { font-size: 0.95rem; color: var(--text-dim); }
+        /* PADRÃO DE BOTÃO (ESTILO MANTIDO) */
+        .btn-premium {
+            display: inline-block;
+            width: 100%;
+            padding: 22px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 900;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px var(--primary-glow);
+            filter: brightness(1.1);
+        }
 
-        /* 📦 CONFIRMAÇÃO */
-        .confirm-box { 
+        /* 🧲 PRIMEIRA DOBRA */
+        .hero { text-align: center; padding: 100px 0 40px; }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; line-height: 1.3; margin-bottom: 25px; letter-spacing: -1px; }
+        .hero h1 span { color: var(--primary); display: block; font-size: 1.8rem; font-weight: 900; margin-top: 10px; text-shadow: 0 0 20px var(--primary-glow); }
+        .hero p { font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+        .hero .sub { font-size: 0.95rem; color: var(--text-dim); }
+
+        /* 📦 CONFIRMAÇÃO E BOTÃO */
+        .access-section { 
             background: var(--glass); 
             border: 1px solid var(--glass-border); 
             padding: 40px 30px; 
             border-radius: 20px; 
             text-align: center; 
             margin: 40px 0;
-            position: relative;
-            overflow: hidden;
         }
-        .confirm-box::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--primary);
-        }
-        .confirm-box h2 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; margin-bottom: 20px; color: #fff; }
+        .access-section p { font-size: 1rem; margin-bottom: 25px; color: #ccc; }
         
-        .check-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; display: block; }
+        .microcopy { display: block; margin-top: 15px; font-size: 0.65rem; color: #444; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
-        /* ⚠️ AVISO IMPORTANTE */
-        .alert-area { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .alert-area h3 { font-size: 0.75rem; font-family: 'Syncopate', sans-serif; color: var(--accent); margin-bottom: 15px; }
-        .alert-list { list-style: none; display: flex; justify-content: center; gap: 20px; font-size: 0.85rem; color: #666; }
-        .alert-list li b { color: #aaa; }
+        /* ⚠️ AVISOS */
+        .important-note { margin-top: 40px; text-align: left; padding: 20px; border-left: 2px solid var(--primary); background: rgba(255,0,0,0.02); }
+        .important-note h3 { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; color: var(--primary); margin-bottom: 10px; letter-spacing: 1px; }
+        .important-note p { font-size: 0.85rem; color: #777; line-height: 1.5; }
 
-        /* 🧠 ORIENTAÇÃO */
-        .orientation { padding: 60px 0; border-bottom: 1px solid #111; }
-        .orientation h2 { font-family: 'Syncopate', sans-serif; font-size: 1rem; margin-bottom: 30px; text-align: center; color: var(--primary); }
-        .step-card { background: rgba(0,0,0,0.4); padding: 25px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #111; }
-        .step-card p { font-size: 0.95rem; color: #ccc; margin-bottom: 15px; }
-        .step-card b { color: #fff; }
-        .bullet { display: flex; gap: 15px; margin-bottom: 10px; font-size: 0.9rem; color: #888; }
-        .bullet i { color: var(--primary); font-style: normal; font-weight: 900; }
+        .backup-email { margin-top: 25px; text-align: center; font-size: 0.85rem; color: #444; }
+        .backup-email b { color: #888; }
 
-        /* 🔥 POSICIONAMENTO */
-        .positioning { text-align: center; padding: 60px 25px; background: radial-gradient(circle at center, rgba(255,0,0,0.03), transparent); margin: 40px 0; border-radius: 30px; }
-        .positioning p { font-size: 1.1rem; color: #eee; line-height: 1.6; }
-        .positioning b { color: var(--primary); }
+        /* 🧠 POSICIONAMENTO */
+        .positioning { padding: 80px 0 40px; text-align: center; }
+        .positioning h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: var(--accent); margin-bottom: 20px; }
+        .positioning p { font-size: 1.1rem; color: #888; }
+        .positioning .break { display: block; margin-top: 25px; font-size: 1.2rem; color: #fff; font-weight: 800; }
+
+        /* 🔥 DIREÇÃO DE USO */
+        .usage-guide { padding: 40px 0; }
+        .usage-guide h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; text-align: center; margin-bottom: 30px; }
+        
+        .step-box { background: #000; border: 1px solid #111; padding: 25px; border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px; }
+        .step-num { color: var(--primary); font-family: 'Syncopate', sans-serif; font-weight: 900; font-size: 1.2rem; }
+        .step-txt { font-size: 0.95rem; color: #eee; }
+
+        /* 💣 REFORÇO DE VALOR */
+        .value-reinforce { text-align: center; padding: 80px 25px; background: radial-gradient(circle at center, rgba(255,255,255,0.02), transparent); border-radius: 30px; margin: 40px 0; }
+        .value-reinforce p { font-size: 1.1rem; color: #888; line-height: 1.7; }
+        .value-reinforce b { color: #fff; }
 
         /* 📲 SUPORTE */
-        .support-fold { padding: 60px 0; text-align: center; }
-        .support-fold h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 2px; }
-        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-        .contact-item { 
+        .support-fold { padding: 60px 0; text-align: center; border-top: 1px solid #111; }
+        .support-fold h2 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; margin-bottom: 30px; letter-spacing: 2px; }
+        
+        .contact-list { display: flex; flex-direction: column; gap: 12px; }
+        .contact-link { 
             background: var(--glass); 
             border: 1px solid var(--glass-border); 
             padding: 20px; 
             border-radius: 10px; 
             text-decoration: none; 
             color: #fff; 
-            font-size: 0.9rem; 
+            font-size: 0.95rem; 
             font-weight: 600;
             transition: 0.3s;
         }
-        .contact-item:hover { background: rgba(255,255,255,0.08); border-color: var(--primary); }
+        .contact-link:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); }
+        .contact-link span { color: var(--text-dim); font-size: 0.7rem; display: block; text-transform: uppercase; margin-bottom: 5px; font-family: 'Syncopate'; }
 
-        /* ⚡ PRÓXIMO PASSO */
-        .next-step { padding: 80px 25px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; }
-        .next-step h2 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; color: var(--accent); margin-bottom: 20px; }
-        .next-step p { font-size: 1rem; color: #555; font-style: italic; max-width: 400px; margin: 0 auto; }
-
-        /* 💥 FECHAMENTO */
+        /* 💥 FECHAMENTO FINAL */
         .final-closing { padding: 100px 0; text-align: center; }
-        .final-closing p { font-size: 1.2rem; margin-bottom: 10px; color: #666; }
-        .final-closing h3 { font-family: 'Syncopate', sans-serif; font-size: 1rem; color: #fff; }
+        .final-closing p { font-size: 1.2rem; color: #555; margin-bottom: 10px; }
+        .final-closing h3 { font-family: 'Syncopate', sans-serif; font-size: 1rem; color: #fff; letter-spacing: 2px; }
 
-        /* FOOTER LEGAL */
-        footer { padding: 40px 0; text-align: center; font-size: 0.5rem; color: #111; text-transform: uppercase; letter-spacing: 2px; }
+        footer { padding: 40px 0; text-align: center; font-size: 0.5rem; color: #111; letter-spacing: 1px; text-transform: uppercase; }
 
         @media (max-width: 480px) {
-            .header-conf h1 span { font-size: 1.4rem; }
+            .hero h1 span { font-size: 1.4rem; }
+            .btn-premium { font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -120,72 +145,89 @@
 
     <canvas id="canvas-bg"></canvas>
 
-    <section class="container header-conf">
-        <span class="check-icon">✓</span>
-        <h1>PARABÉNS. SUA DECISÃO<br><span>FOI CONFIRMADA.</span></h1>
-        <p>Você acabou de dar um passo que a maioria nunca dá.</p>
-        <div class="sub">Agora o mais importante é usar isso da forma certa.</div>
+    <section class="container hero">
+        <h1>PARABÉNS.<br><span>ACESSO LIBERADO.</span></h1>
+        <p>Você foi até o final.</p>
+        <div class="sub">Agora você tem acesso ao que a maioria apenas deseja, mas nunca aplica.</div>
     </section>
 
     <section class="container">
-        <div class="confirm-box">
-            <h2>ACESSO EM PREPARAÇÃO</h2>
-            <p style="font-size: 1.1rem;">Seu acesso já está sendo preparado e você receberá tudo no seu email em instantes.</p>
+        <div class="access-section">
+            <p>Seus conteúdos já estão disponíveis. Você pode acessar agora mesmo pelo painel de alunos.</p>
             
-            <div class="alert-area">
+            <a href="SUO_LINK_DA_KIRVANO_AQUI" class="btn-premium">ACESSAR MEU CONTEÚDO AGORA</a>
+            
+            <span class="microcopy">Acesso imediato • Use o mesmo email da compra</span>
+
+            <div class="important-note">
                 <h3>⚠️ AVISO IMPORTANTE</h3>
-                <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">Se não encontrar na caixa principal em até 5 minutos, verifique:</p>
-                <ul class="alert-list">
-                    <li><b>• Spam</b></li>
-                    <li><b>• Promoções</b></li>
-                </ul>
+                <p>Para acessar, utilize o <b>mesmo e-mail</b> que você usou no momento da compra. Se for seu primeiro acesso, verifique sua senha no e-mail ou use a opção "recuperar senha" na plataforma.</p>
+            </div>
+
+            <div class="backup-email">
+                Você também recebeu os dados de backup no seu e-mail.<br>
+                Verifique <b>Spam</b> ou <b>Promoções</b> se não encontrar.
             </div>
         </div>
     </section>
 
-    <section class="container orientation">
-        <h2>LEIA ISSO ANTES DE ACESSAR</h2>
-        <div class="step-card">
-            <p>Não consuma tudo de qualquer jeito. Se você fizer isso, vai acabar como a maioria:</p>
-            <div class="bullet"><i>👉</i> <span>Sabendo muito</span></div>
-            <div class="bullet"><i>👉</i> <span>Aplicando quase nada</span></div>
-            <p style="margin-top: 20px; font-weight: 800; color: #fff;">DIREÇÃO ESTRATÉGICA:</p>
-            <p style="font-size: 0.9rem; color: #888;">Use o conteúdo com estratégia. Não tente ler tudo em um dia. Aplique um conceito, observe o resultado no mundo real, e só então avance.</p>
+    <section class="container positioning">
+        <h2>AGORA VEM A PARTE IMPORTANTE</h2>
+        <p>A maioria compra conteúdo para sentir que está evoluindo, mas nunca aplica o que lê. Por isso continuam na mesma situação.</p>
+        <span class="break">Você não pode ser essa pessoa.</span>
+    </section>
+
+    <section class="container usage-guide">
+        <h2>COMO TER RESULTADO</h2>
+        <div class="step-box">
+            <span class="step-num">01</span>
+            <span class="step-txt"><b>Leia com atenção:</b> Não tenha pressa de terminar.</span>
+        </div>
+        <div class="step-box">
+            <span class="step-num">02</span>
+            <span class="step-txt"><b>Aplique imediatamente:</b> Teste o conhecimento hoje.</span>
+        </div>
+        <div class="step-box">
+            <span class="step-num">03</span>
+            <span class="step-txt"><b>Repita:</b> Faça até que isso se torne seu novo padrão.</span>
         </div>
     </section>
 
-    <section class="container positioning">
-        <p>O que você adquiriu não é apenas um punhado de arquivos. <b>É uma ferramenta.</b></p>
-        <p style="margin-top: 15px; font-size: 0.95rem; color: #888;">Se usada com a intenção correta, ela tem o poder de mudar permanentemente sua forma de <b>pensar, agir e decidir</b> em qualquer ambiente social.</p>
+    <section class="container value-reinforce">
+        <p>O que você tem em mãos agora não é apenas um PDF ou um curso. <b>É um sistema de reprogramação.</b></p>
+        <p style="margin-top: 20px;">Se usar da forma correta, ele mudará permanentemente sua forma de <b>pensar e agir</b> em qualquer ambiente.</p>
     </section>
 
     <section class="container support-fold">
         <h2>PRECISA DE AJUDA?</h2>
-        <p style="color: #666; margin-bottom: 30px; font-size: 0.9rem;">Se tiver qualquer dúvida técnica ou sobre o conteúdo, fale direto conosco:</p>
-        
-        <div class="contact-grid">
-            <a href="mailto:evoluglow03@gmail.com" class="contact-item">evoluglow03@gmail.com</a>
-            <a href="https://instagram.com/evollgg" class="contact-item">Instagram: @evollgg</a>
-            <a href="https://wa.me/5511960947920" class="contact-item">WhatsApp Suporte</a>
+        <div class="contact-list">
+            <a href="mailto:evoluglow03@gmail.com" class="contact-link">
+                <span>E-mail de Suporte</span>
+                evoluglow03@gmail.com
+            </a>
+            <a href="https://instagram.com/evollgg" class="contact-link">
+                <span>Instagram</span>
+                @evollgg
+            </a>
+            <a href="https://wa.me/5511960947920" class="contact-link">
+                <span>WhatsApp</span>
+                +55 11 96094-7920
+            </a>
         </div>
-    </section>
-
-    <section class="next-step container">
-        <h2>PRÓXIMO PASSO</h2>
-        <p>Fique atento ao seu email e ao nosso Instagram. Você ainda poderá ter acesso a conteúdos mais avançados que não aparecem para o público comum.</p>
     </section>
 
     <section class="container final-closing">
         <p>Agora é com você.</p>
-        <p style="margin-bottom: 25px;">A maioria para no momento do pagamento.</p>
+        <p style="margin-bottom: 25px;">A maioria para no momento do acesso.</p>
         <h3>QUEM EVOLUI… EXECUTA.</h3>
     </section>
 
     <footer>
-        © 2026 EVOLUGLOW • CONFIRMAÇÃO DE ACESSO
+        © 2026 EVOLUGLOW • SISTEMA DE ACESSO • TODOS OS DIREITOS RESERVADOS
     </footer>
 
     <script>
+        // Fundo de Partículas (Mesmo das páginas anteriores)
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -203,4 +245,3 @@
     </script>
 </body>
 </html>
-
